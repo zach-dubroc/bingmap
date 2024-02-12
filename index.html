@@ -1,0 +1,56 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MCA-BingMap</title>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="styles/stylesheet.css" />
+
+</head>
+
+
+<body onload="GetLocation();">
+
+    <div class="wrapper">
+
+        <!--poi menu-->
+
+
+        <div id="poiMenu">
+            <div class="headWrap">
+                <select onchange="getNearByLocations()" name="locations" id="locations">
+                    <option value="0">Select POI</option>
+                    <option value="8060">Medical</option>
+                    <option value="8211">School</option>
+                    <option value="5400">Grocery</option>
+                    <option value="6000">Bank</option>
+                </select>
+
+                <!--mile radius slider-->
+                <div class="slideWrapper">
+                    <label id="miles" for="mileSlide">Search Radius (10mi)</label>
+                    <input type="range" value="1" id="mileSlide" min="1" max="25" oninput="sliderChange(this.value)" />
+                </div>
+                <p id="searchHead"></p>
+            </div>
+
+
+           
+            <!--poi listings-->
+            <div id="poiText">
+            </div>
+        </div>
+
+        <!--map-->
+        <div id="myMap"></div>
+
+    </div>
+
+    <!--scripts-->
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AiS-loejR1BMamnSw-pblyeG2vhLhcHSJ4hK8ctNY4s8sr37v9P3DHCVt1Kcyknb' async defer></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+
+</html>
